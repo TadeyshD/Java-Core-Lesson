@@ -1,22 +1,46 @@
 package com.company.Lesson_1;
 
-public class Employee {
-    String name;            //создаём класс сотрудника;
-    String profession;
-    int age;
-    int salary;
+public abstract class Employee {
+    private String name;            //создаём класс сотрудника;
+    private String profession;
+    private int age;
+    private int salary;
+    private static int count = 0; //static - модификатор, который делает переменную общей для всего класса;
 
-    Employee(String name, String profession, int age, int salary){
+
+//модификаторы доступа:
+    //public -> protected -> default -> private
+    //public -> из любой точки программы
+    //protected -> из одного package или наследники
+    //default -> только из одного package
+    //private -> только внутри класса
+
+    Employee(String name, int age, int salary) {
         this.name = name;
-        this.profession = profession;
         this.age = age;
         this.salary = salary;
-        this.getBonus();
-        System.out.println("Работник создан в системе");
     }
 
 
-    public void getBonus() {   //добавляем метод, который будет умножать зарплату на 2;
-        System.out.println(salary * 2);
+
+
+    public int getSalary() {
+        return salary;
     }
+
+
+    public int getCount() {
+        return count;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
 }
+
+
