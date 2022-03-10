@@ -11,17 +11,26 @@ public class Lesson_2_2 {
             int b = scanner.nextInt();
             variant = scanner.next();
 
+            int[] ourNums = {a, b};
+
         if (variant.equals("1")){ //equals - сравнение
-            System.out.println(a + b);
+            System.out.println(sum(ourNums));
         } else if (variant.equals("2")){
-            System.out.println(a -b);
+            System.out.println(minus(ourNums));
         } else if (variant.equals("3")){
-            System.out.println(a * b);
+            System.out.println(multiply(ourNums));
         } else if (variant.equals("4")) {
             try {
-                System.out.println(a / b);
+                System.out.println(divide(ourNums));
             } catch (ArithmeticException ae) { //создаём исключение
+                ae.printStackTrace();
                 System.out.println("Вы сделали хрень");
+            } catch (ArrayIndexOutOfBoundsException ae){
+                System.out.println(a + " " + b);
+                ae.printStackTrace();
+                System.out.println("Ты чево наделол..");
+            } finally { //финальная команда (сюрприз).
+                System.out.println("я обязательно выполнюсь");
             }
         }else if (variant.equals("5")){
             break;
@@ -34,4 +43,17 @@ public class Lesson_2_2 {
         System.out.println("Спасибо за драники.");
         System.out.println("Поддержи проект и дай пять тыщ.");
         }
+        public static int sum(int[] arr){
+            return arr[0] + arr[1];
+        }
+        public static int minus(int[] arr){
+            return arr[0] - arr[1];
+    }
+        public static int multiply(int[] arr){
+            return arr[0] * arr[1];
+    }
+        public static int divide(int[] arr){
+            return arr[0] / arr[1];
+    }
+
 }
