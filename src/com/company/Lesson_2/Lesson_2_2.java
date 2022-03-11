@@ -1,5 +1,6 @@
 package com.company.Lesson_2;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Lesson_2_2 {
@@ -33,8 +34,16 @@ public class Lesson_2_2 {
                 System.out.println("я обязательно выполнюсь");
             }
         }else if (variant.equals("5")){
+            try {
+                System.out.println(divideAsFormula(ourNums));
+            } catch (MyCalculusException e) {
+                e.printStackTrace();
+            }
+
+        } else if(variant.equals("6")){
             break;
-        } else {
+        }
+        else {
             System.out.println("Вы ввели не то");
         }
 
@@ -55,5 +64,21 @@ public class Lesson_2_2 {
         public static int divide(int[] arr){
             return arr[0] / arr[1];
     }
+    public static int divideAsFormula(int[] arr) throws MyCalculusException {
 
+        Integer integer;
+        //Класс Integer упаковывает значение примитивного типа int в объект.
+        // Объект типа Integer содержит одно поле типа int.
+        if (arr[1] == 7){
+            throw new MyCalculusException("Hello there");
+        } // создаём новое исключение, своё собственное, родное, воот
+            // throw new ArithmeticException();
+
+            //Сигналы о том, что произошло какое-то исключение ввода-вывода.
+            // Этот класс является общим классом исключений,
+            // создаваемых неудачными или прерванными операциями ввода-вывода.
+
+
+        return (arr[0] + 2) - arr[1];
+    }
 }
