@@ -1,14 +1,24 @@
 package com.company.Lesson_3;
 
-public class Employee<Type> {
-    public Object[] param = new Object[10]; //создаём контейнер. В Object можно хранить разные типы данных.
-    String _class;
+public class Employee {
 
-    public void add(Object o, int index){
-        if(o.getClass().getSimpleName().equals(_class))
-        param[index] = o;
+    private int salary;
 
+    public Employee(int salary) {
+        this.salary = salary;
     }
+
+    public int getSalary() {
+        return salary;
+    }
+}
+//    public Object[] param = new Object[10]; //создаём контейнер. В Object можно хранить разные типы данных.
+//    String _class;
+//
+//    public void add(Object o, int index){
+//        if(o.getClass().getSimpleName().equals(_class))
+//        param[index] = o;
+
 
     //public Type param; // содаём обобщённый класс
 //
@@ -22,5 +32,3 @@ public class Employee<Type> {
 //
 //    public void setParam(String param) {
 //        this.param = param;
-    }
-

@@ -3,7 +3,9 @@ package com.company.Lesson_3;
 import java.lang.reflect.Type;
 import java.util.jar.JarEntry;
 
+
 public class MyArray<Type> {
+
     Type array[];
     int size;
 
